@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="add">
+    <input type="text"  class="input" placeholder="Anything here..." bind:input="inputHandle" value="{{someThing}}" bind:confirm="addHandle"/>
+    <image src="../../images/plus.png" class="addImg" bind:tap="addHandle"></image>
+  </view>
+  <view class="listWrap">
+    <view class="list" wx:for="{{todo}}" wx:key="index" bind:tap="completeHandel" data-id="{{index}}">
+      <icon  type="{{item.isComplete?'success':'circle'}}" size="23" class="isComplete"></icon>
+      <text  class="text">{{item.content}}</text>
+      <icon  type="clear" size="23" class="clear" catch:tap="removeHandel" data-id="{{index}}"></icon>
+    </view>
+  </view>
+  <view class="footer">
+    <text bind:tap="selectAll">Toggle all</text>
+    <text>{{current}} {{current>1?'items':'item'}} left </text>
+    <text bind:tap="clearComplete">Clear complete</text>
+  </view>
+</view>
