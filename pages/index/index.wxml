@@ -14,6 +14,6 @@
   <view class="footer">
     <text bind:tap="selectAll">Toggle all</text>
     <text>{{current}} {{current>1?'items':'item'}} left </text>
-    <text bind:tap="clearComplete">Clear complete</text>
+    <text bind:tap="clearComplete">Clear complete</text> 
   </view>
 </view>
